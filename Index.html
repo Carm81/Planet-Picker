@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Build Your Own Planet</title>
+</head>
+
+<body>
+    <div class="starry-background">
+
+        <img id="planet1" class="realistic-planet"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/OSIRIS_Mars_true_color.jpg/320px-OSIRIS_Mars_true_color.jpg"
+            alt="Mars">
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/240px-The_Earth_seen_from_Apollo_17.jpg"
+            class="realistic-planet" alt="Earth" id="planet2">
+
+        <canvas id="star-canvas"></canvas>
+        <div class="container">
+            <h1>Build Your Planet</h1>
+
+            <!-- 🌍 Planet Form -->
+            <form class="planet-form">
+                <label>Planet Name:
+                    <input type="text" placeholder="e.g. Xandar">
+                </label>
+
+                <label>Planet Type
+                    <select>
+                        <option>Rocky</option>
+                        <option>Gas Giant</option>
+                        <option>Icy</option>
+                    </select>
+                </label>
+
+                <label>Climate:
+                    <select>
+                        <option>Cold</option>
+                        <option>Warm</option>
+                        <option>Hot</option>
+                    </select>
+                </label>
+
+                <label>
+                    <input type="checkbox" />
+                    Add Rings?
+                </label>
+                <button type="submit">Render Plantet</button>
+
+            </form>
+
+            <div class="planet-display">
+                <div class="planet"></div>
+                <p class="planet-label">Your Planet Appears Here</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+
+</html>

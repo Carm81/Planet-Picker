@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Orbitron", sans-serif;
+    background: #000;
+    /* pure black */
+
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    height: 100%;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    box-sizing: 0 0 30px rgba(0. 255. 255. 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #00ffff;
+}
+
+.planet-form {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.planet-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+input,
+select,
+button {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+button {
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #00cccc;
+}
+
+.planet-display {
+    text-align: center;
+}
+
+.planet {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at center, #666, #222);
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+    animation: pulseGlow 4s infinite ease-in-out, spinPlanet 60s linear infinite;
+}
+
+.planet-label {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+
+.planet.rings::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(15deg);
+    box-shadow: 0 0 15px rgba(255, 255, 255, );
+}
+
+
+.starry-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.starry-background::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+    opacity: 0.3;
+    animation: twinkle 30s linear infinite;
+    z-index: 0;
+
+}
+
+@keyframes twinkle {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, 10px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+#star-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(0, 255, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.6);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), 0 0 40px rgba(0, 255, 255, 0.3);
+    }
+}
+
+@keyframes spinPlanet {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.realistic-planet {
+    position: absolute;
+    width: 150px;
+    opacity: 0.75;
+    z-index: 0;
+    pointer-events: none;
+
+}
+
+#planet1 {
+    top: 5%;
+    left: 10%;
+
+}
+
+#planet2 {
+    bottom: 7%;
+    right: 5%;
+}
+
+
+
